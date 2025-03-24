@@ -240,8 +240,11 @@ window.addEventListener('resize', () => {
 
   if (windowWidth >= 1366) {
     sidebarMenu.style.display = 'block'
-    main.classList.remove('blur')
+    setTimeout(() => {
+      main.classList.remove('blur')
+    }, 100)
   } else {
     sidebarMenu.style.display = 'none'
+    main.classList.add('blur')
   }
 })
