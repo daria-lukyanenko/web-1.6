@@ -1,0 +1,124 @@
+.equipment-repair {
+  background-color: $background;
+  border-top: 1px solid $border;
+
+  &__subtitle {
+    font-size: 16px;
+    line-height: 24px;
+    letter-spacing: -0.2px;
+    color: $menu;
+    text-transform: uppercase;
+    font-weight: normal;
+    background: linear-gradient(to right, $background 10%, white 100%),
+      linear-gradient(to bottom, white 100%, $background 60%);
+    padding: 15px 20px;
+  }
+
+  &__menu {
+    display: flex;
+    flex-direction: column;
+    margin-top: 20px;
+  }
+
+  &__item {
+    position: relative;
+    max-width: 224px;
+    height: 160px;
+  }
+
+  &__text {
+    font-size: 16px;
+    font-weight: 500;
+    line-height: 24px;
+    letter-spacing: -0.2px;
+    color: $text;
+    margin: 0;
+    position: absolute;
+    top: 0;
+    left: 0;
+    padding: 15px;
+  }
+
+  &__icon {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    padding: 15px;
+  }
+}
+
+.swiper-container {
+  display: flex;
+  position: relative;
+  overflow: hidden;
+
+  @media (min-width: 768px) {
+    display: block;
+  }
+}
+.swiper-pagination-bullet {
+  background-color: $pagination;
+  opacity: 1;
+  transition: background-color 0.3s;
+
+  &:hover,
+  &.swiper-pagination-bullet-active {
+    background-color: $pagination-active;
+  }
+}
+
+@media (min-width: 768px) {
+  .swiper-pagination {
+    display: none;
+  }
+  .equipment-repair__list {
+    box-sizing: border-box;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    gap: 20px;
+    padding: 0 10px;
+    margin: 0 auto;
+  }
+
+  .equipment-repair__item {
+    display: none;
+    justify-content: space-between;
+    box-sizing: border-box;
+    max-width: 224px;
+    height: 160px;
+    border: 1px solid $devider;
+    border-radius: 6px;
+    background-color: white;
+    padding: 15px;
+
+    &:nth-child(-n + 3) {
+      display: flex;
+
+      &:hover {
+        flex-grow: 1;
+        z-index: 10;
+        border: 2px solid $pagination-active;
+      }
+    }
+  }
+}
+
+@media (min-width: 1366px) {
+  .swiper-pagination {
+    display: none;
+  }
+  .equipment-repair__item {
+    display: none;
+
+    &:nth-child(-n + 4) {
+      display: flex;
+
+      &:hover {
+        flex-grow: 1;
+        z-index: 10;
+        border: 2px solid $pagination-active;
+      }
+    }
+  }
+}

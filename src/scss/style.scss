@@ -1,17 +1,81 @@
-$bgColor: #24292e;
-$text: #fff;
+@import './variables.scss';
+@import './topbar.scss';
+@import './about-services.scss';
+@import './page-nav.scss';
+@import './about-company.scss';
+@import './brands.scss';
+@import './equipment-repair.scss';
+@import './prices.scss';
+@import './footer.scss';
+@import './modal.scss';
+@import './sidebar-menu.scss';
 
 @font-face {
-  font-family: 'Comic';
-  src: url('../fonts/comic.ttf') format('truetype');
+  font-family: 'TT Lakes';
+  src: url(../fonts/TTLakes-Bold/TTLakes-Bold.eot) format('eot'),
+    url(../fonts/TTLakes-Bold/TTLakes-Bold.ttf) format('ttf'),
+    url(../fonts/TTLakes-Bold/TTLakes-Bold.woff) format('woff');
+  font-weight: bold;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'TT Lakes';
+  src: url(../fonts/TTLakes-Medium/TTLakes-Medium.eot) format('eot'),
+    url(../fonts/TTLakes-Medium/TTLakes-Medium.ttf) format('ttf'),
+    url(../fonts/TTLakes-Medium/TTLakes-Medium.woff) format('woff');
+  font-weight: medium;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'TT Lakes';
+  src: url(../fonts/TTLakes-Regular/TTLakes-Regular.eot) format('eot'),
+    url(../fonts/TTLakes-Regular/TTLakes-Regular.ttf) format('ttf'),
+    url(../fonts/TTLakes-Regular/TTLakes-Regular.woff) format('woff');
   font-weight: normal;
-  font-style: italic;
+  font-style: normal;
+}
+
+:root {
+  --tr: 0.2s;
+}
+
+a {
+  text-decoration: none;
+}
+
+html {
+  box-sizing: border-box;
+  height: 100%;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
+  margin: 0;
+  padding: 0;
 }
 
 body {
-  padding: 1rem;
-  margin: 0;
-  font-family: Comic, sans-serif;
-  background-color: $bgColor;
-  color: $text;
+  font-family: 'TT Lakes';
+  background-color: $background;
+}
+
+.container {
+  min-width: 320px;
+  max-width: 1440px;
+  margin: 0 auto;
+  display: flex;
+}
+.page-container {
+  min-width: 320px;
+  max-width: 1440px;
+  margin: 0 auto;
+  position: relative;
+}
+.blur {
+  filter: blur(5px) !important;
+  transition: filter 0.3s ease;
 }

@@ -1,0 +1,333 @@
+.prices {
+  background-color: $background;
+  border-top: 1px solid $border;
+
+  &__subtitle {
+    font-size: 16px;
+    line-height: 24px;
+    letter-spacing: -0.2px;
+    color: $menu;
+    text-transform: uppercase;
+    font-weight: normal;
+    background: linear-gradient(to right, $background 10%, white 100%),
+      linear-gradient(to bottom, white 100%, $background 60%);
+    padding: 15px 20px;
+  }
+
+  &__wrapper {
+    display: none;
+  }
+  &__menu {
+    display: flex;
+    flex-direction: column;
+    margin-top: 20px;
+  }
+
+  &__item {
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    max-width: 260px;
+    height: 220px;
+    box-sizing: border-box;
+    border-color: white;
+    transition: flex-grow 0.3s ease, border-color 0.3s ease;
+  }
+
+  &__information {
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 20px;
+    letter-spacing: 0.2px;
+    color: $text;
+    width: 288px;
+    padding: 0 0 20px 20px;
+  }
+
+  &__link {
+    font-size: 14px;
+    line-height: 24px;
+    letter-spacing: -0.2px;
+    color: black;
+    padding: 20px;
+    font-weight: 300;
+    position: relative;
+    max-width: 192px;
+    max-height: 54.98px;
+  }
+
+  &__link:hover {
+    color: $text;
+    font-weight: bold;
+  }
+
+  &__icon {
+    position: absolute;
+    top: 25px;
+    right: 6px;
+  }
+}
+
+.services {
+  width: 100%;
+  list-style-type: none;
+}
+
+.services__item {
+  margin-bottom: 36px;
+}
+
+.swiper-slide:nth-last-child(-n + 3) .services__item {
+  margin-bottom: 26px;
+}
+
+.services__label {
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 16px;
+  letter-spacing: 0;
+  color: $menu;
+}
+
+.services__text {
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 18px;
+  letter-spacing: 0.2px;
+  color: $text;
+}
+
+.order-button {
+  background-color: $button-background;
+  border: none;
+  border-radius: 16px;
+  width: 119px;
+  height: 32px;
+  position: absolute;
+  bottom: 0px;
+  right: 0px;
+  margin-bottom: 10px;
+  margin-right: 10px;
+  cursor: pointer;
+  transition: filter 0.3s ease, opacity 0.3s ease;
+
+  &:hover {
+    color: $menu;
+    filter: brightness(1.2);
+    opacity: 0.7;
+  }
+
+  &--active {
+    color: $menu;
+    opacity: 0.7;
+  }
+
+  &__text {
+    font-size: 12px;
+    font-weight: 700;
+    line-height: 24px;
+    letter-spacing: -0.15px;
+    color: white;
+    text-transform: uppercase;
+    position: absolute;
+    bottom: 5px;
+    left: 12px;
+  }
+
+  &__icon {
+    position: absolute;
+    bottom: 11px;
+    right: 10px;
+  }
+}
+
+.swiper-container {
+  display: flex;
+  position: relative;
+  overflow: hidden;
+}
+
+.swiper-pagination-bullet {
+  background-color: $pagination;
+  opacity: 1;
+  transition: background-color 0.3s;
+
+  &:hover,
+  &.swiper-pagination-bullet-active {
+    background-color: $pagination-active;
+  }
+}
+
+@media (min-width: 768px) {
+  .swiper-pagination {
+    display: none;
+  }
+  .swiper-slide-active {
+    flex-grow: 0;
+    border: none;
+  }
+
+  .prices {
+    &__subtitle {
+      margin-bottom: 20px;
+    }
+
+    &__wrapper {
+      display: flex;
+      font-size: 14px;
+      font-weight: 500;
+      line-height: 16px;
+      letter-spacing: 0;
+      color: $menu;
+      margin-left: 35px;
+    }
+
+    &__label:nth-child(2) {
+      display: inline-block;
+      margin-left: 250px;
+    }
+    &__label:last-child {
+      display: inline-block;
+      margin-left: 60px;
+    }
+
+    &__menu {
+      display: table;
+      background-color: white;
+      width: 730px;
+      margin-left: 20px;
+      border-radius: 8px;
+    }
+    &__list {
+      flex-direction: column;
+      margin-bottom: 5px;
+    }
+
+    &__item {
+      display: table-row;
+      height: auto;
+      max-width: 720px;
+      margin-left: 0;
+      border-radius: 0;
+      border: none;
+      padding: 15px;
+      transition: none;
+      border-bottom: 1px solid $devider;
+
+      &:nth-child(2) {
+        border-top: 1px solid $devider;
+      }
+      &:last-child {
+        border-bottom: none;
+      }
+
+      &:hover,
+      &.swiper-slide-active {
+        flex-grow: 0;
+        z-index: 0;
+        border: white;
+        border-bottom: $devider;
+      }
+    }
+    &__information {
+      width: 421px;
+      white-space: wrap;
+      padding-top: 20px;
+    }
+  }
+
+  .services {
+    display: table;
+    width: 100%;
+
+    &__label {
+      display: none;
+    }
+
+    &__item {
+      display: table-cell;
+      vertical-align: top;
+      text-align: start;
+    }
+
+    &__text {
+      display: inline-block;
+      min-width: 348px;
+      margin-right: 20px;
+    }
+  }
+
+  .prices .price {
+    display: inline-block;
+    min-width: 74px;
+  }
+
+  .prices .time {
+    max-width: 81px;
+
+    margin-right: 20px;
+  }
+  .order-button {
+    display: table-cell;
+    vertical-align: middle;
+    text-align: center;
+    padding: 10px;
+  }
+}
+
+@media (min-width: 1366px) {
+  .prices {
+    &__label:nth-child(2) {
+      display: inline-block;
+      margin-left: 300px;
+    }
+    &__label:last-child {
+      display: inline-block;
+      margin-left: 180px;
+    }
+    &__menu {
+      display: table;
+      background-color: white;
+      min-width: 1066px;
+      border-radius: 8px;
+    }
+    &__list {
+      flex-direction: column;
+      margin-bottom: 5px;
+    }
+
+    &__item {
+      display: table-row;
+      height: auto;
+      min-width: 1056px;
+      margin-left: 0;
+
+      &:hover {
+        flex-grow: 0;
+        z-index: 0;
+        border: none;
+      }
+    }
+    &__information {
+      width: 421px;
+      white-space: wrap;
+    }
+  }
+
+  .prices .price {
+    display: inline-block;
+    min-width: 74px;
+    margin-right: 130px;
+    margin-left: 30px;
+  }
+
+  .prices .time {
+    max-width: 81px;
+  }
+  .order-button {
+    display: table-cell;
+    vertical-align: middle;
+    text-align: center;
+    padding: 10px;
+  }
+}
